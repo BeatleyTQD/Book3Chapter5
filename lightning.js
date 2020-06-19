@@ -121,3 +121,14 @@ const sentence = words.reduce(
 console.log("Sentence Exercise", sentence)
 
 //////////////////////////////////////////////////////
+//PRACTICE: BIG SPENDERS
+
+// Array to contain all the big spenders
+const bigSpenders = businesses.filter(business => {
+    let bigSpender = false;
+    if (business.orders > 9000) {
+        bigSpender = true;
+    }
+    return bigSpender
+})
+console.log("Big Spender", bigSpenders)
