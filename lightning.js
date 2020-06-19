@@ -76,3 +76,48 @@ agents.forEach(agent => {
   outEl.innerHTML += `<h3>${agent.phoneNumber}</h3>`; 
   outEl.innerHTML += "<hr/>";
 });
+
+/////////////////////////////////////////////////
+
+//LIGHTNING EXERCISE FOUR
+document
+    .querySelector("#companySearch")
+    .addEventListener("keypress", keyPressEvent => {
+        if (keyPressEvent.charCode === 13) {
+            /* WHEN  USER PRESSES ENTER, FIND MATCHING BUSINESS */
+            const foundAgent = businesses.find(
+                agent =>
+                    (agent.purchasingAgent.nameFirst.includes(keyPressEvent.target.value) || agent.purchasingAgent.nameLast.includes(keyPressEvent.target.value))
+            );
+
+            outEl.innerHTML = `
+                <h2>
+                ${foundAgent.purchasingAgent.nameFirst} ${foundAgent.purchasingAgent.nameLast}
+                </h2>
+
+            `;
+        }
+    });
+
+//////////////////////////////////////////////////
+
+//LIGHTNING EXERCISE FIVE
+const monthlyRainfall = [23, 13, 27, 20, 20, 31, 33, 26, 19, 12, 14, 12, 10]
+
+const totalRainfall = monthlyRainfall.reduce(
+    (currentTotal, nextValue) => currentTotal += nextValue,
+    0
+    )
+
+console.log("Total Rainfall Exercise", totalRainfall)
+
+const words = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"]
+
+const sentence = words.reduce(
+    (currentWord, nextWord) => currentWord += nextWord ,
+    ""
+)
+
+console.log("Sentence Exercise", sentence)
+
+//////////////////////////////////////////////////////
